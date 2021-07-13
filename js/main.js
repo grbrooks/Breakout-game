@@ -64,12 +64,12 @@ function draw() {
 
     }
     if (rightPressed) {
-        paddleX += 7;
+        paddleX += 3;
         if (paddleX + paddleWidth > canvas.width) {
             paddleX = canvas.width - paddleWidth;
         }
     } else if (leftPressed) {
-        paddleX -= 7;
+        paddleX -= 1;
         if (paddleX < 0) {
             paddleX = 0;
         }
