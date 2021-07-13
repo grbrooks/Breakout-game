@@ -15,19 +15,19 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
-    if (e.key == "right" || e.key == " ArrowRight ") {
+    if (e.key == "right" || e.key == "ArrowRight") {
         rightPressed = true;
 
-    } else if (e.key == "left" || e.key == ArrowLeft) {
+    } else if (e.key == "left" || e.key == "ArrowLeft") {
         leftPressed = true;
     }
 }
 
 function keyUpHandler(e) {
-    if (e.key == "right" || e.key == " ArrowRight ") {
+    if (e.key == "right" || e.key == "ArrowRight") {
         rightPressed = true;
 
-    } else if (e.key == "left" || e.key == ArrowLeft) {
+    } else if (e.key == "left" || e.key == "ArrowLeft") {
         leftPressed = true;
     }
 
@@ -47,7 +47,7 @@ function drawPaddle() {
     ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
     ctx.fillStyle = "#0096dd"
     ctx.fill();
-    ctc.closePath();
+    ctx.closePath();
 }
 
 
