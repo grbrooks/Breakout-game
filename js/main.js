@@ -26,10 +26,10 @@ function keyDownHandler(e) {
 
 function keyUpHandler(e) {
     if (e.key == "Right" || e.key == "ArrowRight") {
-        rightPressed = true;
+        rightPressed = false;
 
     } else if (e.key == "Left" || e.key == "ArrowLeft") {
-        leftPressed = true;
+        leftPressed = false;
     }
 
 }
@@ -64,12 +64,12 @@ function draw() {
 
     }
     if (rightPressed) {
-        paddleX += 3;
+        paddleX += 7;
         if (paddleX + paddleWidth > canvas.width) {
             paddleX = canvas.width - paddleWidth;
         }
     } else if (leftPressed) {
-        paddleX -= 1;
+        paddleX -= 7;
         if (paddleX < 0) {
             paddleX = 0;
         }
@@ -77,5 +77,4 @@ function draw() {
     x += dx;
     y += dy;
 }
-
 setInterval(draw, 10);
