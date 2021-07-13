@@ -46,7 +46,7 @@ function drawBall() {
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0096dd";
+    ctx.fillStyle = "#0095dd";
     ctx.fill();
     ctx.closePath();
 }
@@ -72,18 +72,15 @@ function draw() {
         }
 
     }
-    if (rightPressed) {
+    if (rightPressed && paddleX < canvas.width - paddleWidth) {
         paddleX += 7;
-        if (paddleX + paddleWidth > canvas.width) {
-            paddleX = canvas.width - paddleWidth;
-        }
-    } else if (leftPressed) {
+    } else if (leftPressed && paddleX > 0) {
         paddleX -= 7;
-        if (paddleX < 0) {
-            paddleX = 0;
-        }
-
-        x += dx;
-        y += dy;
     }
-    let interval = setInterval(draw, 10);
+
+
+
+    x += dx;
+    y += dy;
+}
+let interval = setInterval(draw, 10);
