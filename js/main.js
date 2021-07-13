@@ -15,19 +15,20 @@ document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
 
 function keyDownHandler(e) {
-    if (e.key == "right" || e.key == "ArrowRight") {
+    if (e.key == "Right" || e.key == "ArrowRight") {
         rightPressed = true;
 
-    } else if (e.key == "left" || e.key == "ArrowLeft") {
+    } else if (e.key == "Left" || e.key == "ArrowLeft") {
         leftPressed = true;
     }
+    console.log(e.key)
 }
 
 function keyUpHandler(e) {
-    if (e.key == "right" || e.key == "ArrowRight") {
+    if (e.key == "Right" || e.key == "ArrowRight") {
         rightPressed = true;
 
-    } else if (e.key == "left" || e.key == "ArrowLeft") {
+    } else if (e.key == "Left" || e.key == "ArrowLeft") {
         leftPressed = true;
     }
 
@@ -45,7 +46,7 @@ function drawBall() {
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0096dd"
+    ctx.fillStyle = "#0096dd";
     ctx.fill();
     ctx.closePath();
 }
@@ -60,6 +61,7 @@ function draw() {
     }
     if (y + dy > canvas.height - ballRadius || y + dy < ballRadius) {
         dy = -dy;
+
     }
     if (rightPressed) {
         paddleX += 7;
