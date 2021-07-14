@@ -2,17 +2,17 @@ let canvas = document.getElementById("myCanvas");
 let ctx = canvas.getContext("2d");
 let x = canvas.width / 2;
 let y = canvas.height - 30;
-let ballRadius = 10;
+let ballRadius = 5;
 let paddleHeight = 10;
-let paddleWidth = 55;
+let paddleWidth = 60;
 let rightPressed = false;
 let leftPressed = false;
 let paddleX = (canvas.width - paddleWidth) / 2;
 let dx = 2;
 let dy = -2;
-let brickRowCount = 3;
-let brickColumnCount = 5;
-let brickWidth = 75;
+let brickRowCount = 5;
+let brickColumnCount = 7;
+let brickWidth = 55;
 let brickHeight = 10;
 let brickPadding = 10;
 let brickOffsetTop = 30;
@@ -93,7 +93,7 @@ function drawBall() {
 function drawPaddle() {
     ctx.beginPath();
     ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-    ctx.fillStyle = "#0095dd";
+    ctx.fillStyle = "#ffdd0";
     ctx.fill();
     ctx.closePath();
 }
@@ -150,7 +150,9 @@ function draw() {
         } else {
             lives--;
             if (!lives) {
+
                 alert("GAME OVER! You Scored " + score);
+
                 document.location.reload();
                 clearInterval(interval);
             } else {
