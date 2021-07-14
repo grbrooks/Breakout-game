@@ -11,7 +11,7 @@ let paddleX = (canvas.width - paddleWidth) / 2;
 let dx = 2;
 let dy = -2;
 let brickRowCount = 3;
-let brickColumnCount = 5;
+let brickColumnCount = 7;
 let brickWidth = 75;
 let brickHeight = 20;
 let brickPadding = 10;
@@ -75,7 +75,7 @@ function drawBricks() {
             bricks[c][r].x = brickX;
             bricks[c][r].y = brickY;
             ctx.beginPath();
-            ctx.rect(0, 0, brickWidth, brickHeight);
+            ctx.rect(brickX, brickY, brickWidth, brickHeight);
             ctx.fillStyle = "#0095dd";
             ctx.fill();
             ctx.closePath();
@@ -83,8 +83,10 @@ function drawBricks() {
     }
 }
 
+
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBricks()
     drawBall();
     drawPaddle();
     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
