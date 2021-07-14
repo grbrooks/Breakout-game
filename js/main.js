@@ -30,6 +30,7 @@ for (let c = 0; c < brickColumnCount; c++) {
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
+document.addEventListener("mousemove", mouseMoveHandler, false);
 
 function keyDownHandler(e) {
     if (e.key == "Right" || e.key == "ArrowRight") {
@@ -106,18 +107,18 @@ function drawBricks() {
     }
 }
 
-/*function drawScore() {
+function drawScore() {
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095dd";
-    ctx.fill.Text("Score:" + score, 8, 20);
-}*/
+    ctx.fillText("Score:" + score, 8, 20);
+}
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
     drawBall();
     drawPaddle();
-
+    drawScore();
     collisionDetection();
 
 
@@ -131,7 +132,7 @@ function draw() {
             dy = -dy;
         } else {
 
-            alert("GAME OVER");
+            alert("GAME OVER! You Scored " + score);
             document.location.reload();
             clearInterval(interval);
         }
