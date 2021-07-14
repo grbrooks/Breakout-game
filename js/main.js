@@ -70,8 +70,10 @@ function drawPaddle() {
 function drawBricks() {
     for (let c = 0; c < brickColumnCount; c++) {
         for (let r = 0; r < brickRowCount; r++) {
-            bricks[c][r].x = 0;
-            bricks[c][r].y = 0;
+            let brickX = (c * (brickWidth + brickPadding)) + brickOffsetLeft;
+            let brickY = (r * (brickHeight + brickPadding)) + brickOffsetTop;
+            bricks[c][r].x = brickX;
+            bricks[c][r].y = brickY;
             ctx.beginPath();
             ctx.rect(0, 0, brickWidth, brickHeight);
             ctx.fillStyle = "#0095dd";
