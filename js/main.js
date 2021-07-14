@@ -10,7 +10,7 @@ let leftPressed = false;
 let paddleX = (canvas.width - paddleWidth) / 2;
 let dx = 2;
 let dy = -2;
-let brickRowCount = 5;
+let brickRowCount = 10;
 let brickColumnCount = 7;
 let brickWidth = 55;
 let brickHeight = 10;
@@ -117,15 +117,15 @@ function drawBricks() {
 }
 
 function drawScore() {
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095dd";
+    ctx.font = "24px Arial";
+    ctx.fillStyle = "#109e23";
     ctx.fillText("Score:" + score, 8, 20);
 }
 
 function drawLives() {
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "#00995dd";
-    ctx.fillText("Lives:" + lives, canvas.width - 65, 20);
+    ctx.font = "24px Arial";
+    ctx.fillStyle = "#109e23";
+    ctx.fillText("Lives:" + lives, canvas.width - 90, 20);
 
 }
 
