@@ -18,7 +18,6 @@ let brickPadding = 10;
 let brickOffsetTop = 30;
 let brickOffsetLeft = 30;
 let score = 0;
-
 let bricks = [];
 for (let c = 0; c < brickColumnCount; c++) {
     bricks[c] = [];
@@ -39,7 +38,7 @@ function keyDownHandler(e) {
     } else if (e.key == "Left" || e.key == "ArrowLeft") {
         leftPressed = true;
     }
-    console.log(e.key)
+
 }
 
 function keyUpHandler(e) {
@@ -72,11 +71,6 @@ function collisionDetection() {
     }
 }
 
-function drawScore() {
-    ctx.font = "16px Arial";
-    ctx.fillStyle = "#0095dd";
-    ctx.fill.Text("Score:+score,8,20");
-}
 
 function drawBall() {
     ctx.beginPath();
@@ -112,14 +106,20 @@ function drawBricks() {
     }
 }
 
+/*function drawScore() {
+    ctx.font = "16px Arial";
+    ctx.fillStyle = "#0095dd";
+    ctx.fill.Text("Score:" + score, 8, 20);
+}*/
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     drawBricks();
     drawBall();
     drawPaddle();
-    drawScore()
+
     collisionDetection();
+
 
     if (x + dx > canvas.width - ballRadius || x + dx < ballRadius) {
         dx = -dx;
