@@ -10,6 +10,13 @@ let leftPressed = false;
 let paddleX = (canvas.width - paddleWidth) / 2;
 let dx = 2;
 let dy = -2;
+let brickRowCount = 3;
+let brickColumnCount = 5;
+let brickWidth = 75;
+let brickHeight = 20;
+let brickPadding = 10;
+let brickOffsetTop = 30;
+let brickOffsetLeft = 30;
 
 document.addEventListener("keydown", keyDownHandler, false);
 document.addEventListener("keyup", keyUpHandler, false);
