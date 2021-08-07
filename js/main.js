@@ -4,7 +4,7 @@ let x = canvas.width / 2;
 let y = canvas.height - 30;
 let ballRadius = 5;
 let paddleHeight = 10;
-let paddleWidth = 60;
+let paddleWidth = 120;
 let rightPressed = false;
 let leftPressed = false;
 let paddleX = (canvas.width - paddleWidth) / 2;
@@ -71,7 +71,10 @@ function collisionDetection() {
                     b.status = 0;
                     score++;
                     if (score == brickRowCount * brickColumnCount) {
-                        alert("YOU WIN,CONGRATULATIONS!!");
+
+                        lives = lives + 1;
+                        brickRowCount = 5;
+                        brickColumnCount = 7;
                         Document.location.reload();
                         clearInterval(interval);
                     }
