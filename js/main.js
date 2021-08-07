@@ -10,7 +10,7 @@ let leftPressed = false;
 let paddleX = (canvas.width - paddleWidth) / 2;
 let dx = 2;
 let dy = -2;
-let brickRowCount = 10;
+let brickRowCount = 5;
 let brickColumnCount = 7;
 let brickWidth = 55;
 let brickHeight = 10;
@@ -84,7 +84,7 @@ function collisionDetection() {
 
 function drawBall() {
     ctx.beginPath();
-    ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
+    ctx.arc(x, y, ballRadius, 0, Math.PI * 4);
     ctx.fillStyle = "#0a054d";
     ctx.fill();
     ctx.closePath();
