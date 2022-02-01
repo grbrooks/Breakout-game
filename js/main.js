@@ -77,6 +77,7 @@ function collisionDetection() {
                         brickColumnCount = 7;
                         Document.location.reload();
                         clearInterval(interval);
+                        drawBricks();
                     }
                 }
             }
@@ -172,6 +173,7 @@ function draw() {
         paddleX += 7;
     } else if (leftPressed && paddleX > 0) {
         paddleX -= 7;
+
     }
 
 
