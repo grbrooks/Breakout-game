@@ -73,7 +73,7 @@ function collisionDetection() {
                     if (score == brickRowCount * brickColumnCount) {
 
                         lives = lives + 1;
-                        brickRowCount = 5;
+                        brickRowCount = 7;
                         brickColumnCount = 7;
                         Document.location.reload();
                         clearInterval(interval);
